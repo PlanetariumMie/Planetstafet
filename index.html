@@ -210,17 +210,6 @@
 
   <div id="postPage">
 
-    <select id="postSelect" onchange="changePost()">
-
-      <option value="1">Merkur</option>
-      <option value="2">Venus</option>
-      <option value="3">Mars</option>
-      <option value="4">Jupiter</option>
-      <option value="5">Saturn</option>
-      <option value="6">Uranus & Neptun</option>
-
-    </select>
-
     <div
       id="postInformation"
       class="post-information">
@@ -303,21 +292,6 @@
     document.getElementById("startPage").style.display = "none";
 
     document.getElementById("postPage").style.display = "block";
-
-    document.getElementById("postSelect").value = postNumber;
-
-    document.getElementById("postInformation").innerHTML =
-      posts[postNumber];
-
-    window.scrollTo(0, 0);
-
-  }
-
-
-  function changePost() {
-
-    const postNumber =
-      document.getElementById("postSelect").value;
 
     document.getElementById("postInformation").innerHTML =
       posts[postNumber];
