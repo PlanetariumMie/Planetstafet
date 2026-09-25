@@ -70,10 +70,64 @@
     }
 
     .post-information {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-    }
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+    .post-information h2 {
+  margin-top: 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+    .post-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 12px;
+  margin: 10px 0 25px 0;
+  display: block;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #eeeeee;
+  margin: 25px 0;
+}
+
+.assignment {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.assignment h3 {
+  margin-top: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.assignment p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.hint {
+  margin-top: 18px;
+  padding: 15px;
+  background: #fff8dc;
+  border-radius: 10px;
+  font-size: 15px;
+}
 
     .back-button {
       width: 100%;
@@ -172,9 +226,36 @@
   const posts = {
 
     1: `
-      <h2>Merkur</h2>
-      <p>Information for Post 1 will go here.</p>
-    `,
+  <h2>Post 1</h2>
+
+  <p class="post-description">
+    This post is located near the old bridge.
+    Take a moment to look around before starting the assignment.
+  </p>
+
+  <img
+    class="post-image"
+    src="images/post1.jpg"
+    alt="Post 1"
+  >
+
+  <hr class="divider">
+
+  <div class="assignment">
+
+    <h3>Your assignment</h3>
+
+    <p>
+      Find the hidden marker and write down the word you discover.
+    </p>
+
+    <div class="hint">
+      <strong>Hint:</strong>
+      Look somewhere close to the water.
+    </div>
+
+  </div>
+`,
 
     2: `
       <h2>Venus</h2>
