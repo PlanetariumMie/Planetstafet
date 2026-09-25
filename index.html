@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Race Posts</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 30px 20px;
+      color: #222;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    select {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+      background: white;
+    }
+
+    #information {
+      display: none;
+      margin-top: 25px;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Race</h1>
+
+    <p class="intro">
+      Select the post you are currently at.
+    </p>
+
+    <select id="postSelect" onchange="showPost()">
+
+      <option value="">Choose a post...</option>
+
+      <option value="1">Post 1</option>
+      <option value="2">Post 2</option>
+      <option value="3">Post 3</option>
+      <option value="4">Post 4</option>
+      <option value="5">Post 5</option>
+
+    </select>
+
+    <div id="information"></div>
+
+  </div>
+
+  <script>
+
+    const posts = {
+
+      1: `
+        <h2>Post 1</h2>
+        <p>Information for Post 1 will go here.</p>
+      `,
+
+      2: `
+        <h2>Post 2</h2>
+        <p>Information for Post 2 will go here.</p>
+      `,
+
+      3: `
+        <h2>Post 3</h2>
+        <p>Information for Post 3 will go here.</p>
+      `,
+
+      4: `
+        <h2>Post 4</h2>
+        <p>Information for Post 4 will go here.</p>
+      `,
+
+      5: `
+        <h2>Post 5</h2>
+        <p>Information for Post 5 will go here.</p>
+      `
+
+    };
+
+    function showPost() {
+
+      const selectedPost =
+        document.getElementById("postSelect").value;
+
+      const information =
+        document.getElementById("information");
+
+      if (selectedPost) {
+
+        information.innerHTML =
+          posts[selectedPost];
+
+        information.style.display = "block";
+
+      } else {
+
+        information.style.display = "none";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
