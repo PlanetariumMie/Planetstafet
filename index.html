@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,106 +30,220 @@
       margin-bottom: 30px;
     }
 
+    /* POST BUTTONS */
+
+    .post-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .post-button {
+      padding: 22px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      background: #222;
+      color: white;
+      cursor: pointer;
+    }
+
+    .post-button:hover {
+      background: #444;
+    }
+
+    /* POST PAGE */
+
+    #postPage {
+      display: none;
+    }
+
     select {
       width: 100%;
-      padding: 16px;
+      padding: 15px;
       font-size: 18px;
       border-radius: 10px;
       border: 1px solid #aaa;
       background: white;
+      margin-bottom: 20px;
     }
 
-    #information {
-      display: none;
-      margin-top: 25px;
+    .post-information {
       background: white;
       padding: 25px;
       border-radius: 12px;
     }
+
+    .back-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #ddd;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
+
+  <!-- START PAGE -->
+
+  <div id="startPage">
 
     <h1>Race</h1>
 
     <p class="intro">
-      Select the post you are currently at.
+      Which post are you at?
     </p>
 
-    <select id="postSelect" onchange="showPost()">
+    <div class="post-buttons">
 
-      <option value="">Choose a post...</option>
+      <button class="post-button" onclick="openPost(1)">
+        Post 1
+      </button>
+
+      <button class="post-button" onclick="openPost(2)">
+        Post 2
+      </button>
+
+      <button class="post-button" onclick="openPost(3)">
+        Post 3
+      </button>
+
+      <button class="post-button" onclick="openPost(4)">
+        Post 4
+      </button>
+
+      <button class="post-button" onclick="openPost(5)">
+        Post 5
+      </button>
+
+      <button class="post-button" onclick="openPost(6)">
+        Post 6
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- POST PAGE -->
+
+  <div id="postPage">
+
+    <select id="postSelect" onchange="changePost()">
 
       <option value="1">Post 1</option>
       <option value="2">Post 2</option>
       <option value="3">Post 3</option>
       <option value="4">Post 4</option>
       <option value="5">Post 5</option>
+      <option value="6">Post 6</option>
 
     </select>
 
-    <div id="information"></div>
+    <div
+      id="postInformation"
+      class="post-information">
+    </div>
+
+    <button
+      class="back-button"
+      onclick="goBack()">
+
+      ← Back to all posts
+
+    </button>
 
   </div>
 
-  <script>
+</div>
 
-    const posts = {
 
-      1: `
-        <h2>Post 1</h2>
-        <p>Information for Post 1 will go here.</p>
-      `,
+<script>
 
-      2: `
-        <h2>Post 2</h2>
-        <p>Information for Post 2 will go here.</p>
-      `,
+  const posts = {
 
-      3: `
-        <h2>Post 3</h2>
-        <p>Information for Post 3 will go here.</p>
-      `,
+    1: `
+      <h2>Post 1</h2>
+      <p>Information for Post 1 will go here.</p>
+    `,
 
-      4: `
-        <h2>Post 4</h2>
-        <p>Information for Post 4 will go here.</p>
-      `,
+    2: `
+      <h2>Post 2</h2>
+      <p>Information for Post 2 will go here.</p>
+    `,
 
-      5: `
-        <h2>Post 5</h2>
-        <p>Information for Post 5 will go here.</p>
-      `
+    3: `
+      <h2>Post 3</h2>
+      <p>Information for Post 3 will go here.</p>
+    `,
 
-    };
+    4: `
+      <h2>Post 4</h2>
+      <p>Information for Post 4 will go here.</p>
+    `,
 
-    function showPost() {
+    5: `
+      <h2>Post 5</h2>
+      <p>Information for Post 5 will go here.</p>
+    `,
 
-      const selectedPost =
-        document.getElementById("postSelect").value;
+    6: `
+      <h2>Post 6</h2>
+      <p>Information for Post 6 will go here.</p>
+    `
 
-      const information =
-        document.getElementById("information");
+  };
 
-      if (selectedPost) {
 
-        information.innerHTML =
-          posts[selectedPost];
+  function openPost(postNumber) {
 
-        information.style.display = "block";
+    document.getElementById("startPage").style.display = "none";
 
-      } else {
+    document.getElementById("postPage").style.display = "block";
 
-        information.style.display = "none";
+    document.getElementById("postSelect").value = postNumber;
 
-      }
+    document.getElementById("postInformation").innerHTML =
+      posts[postNumber];
 
-    }
+    window.scrollTo(0, 0);
 
-  </script>
+  }
+
+
+  function changePost() {
+
+    const postNumber =
+      document.getElementById("postSelect").value;
+
+    document.getElementById("postInformation").innerHTML =
+      posts[postNumber];
+
+    window.scrollTo(0, 0);
+
+  }
+
+
+  function goBack() {
+
+    document.getElementById("postPage").style.display = "none";
+
+    document.getElementById("startPage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+  }
+
+</script>
 
 </body>
 
