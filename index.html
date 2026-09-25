@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Race Posts</title>
+  <title>Planetstafet</title>
 
   <style>
     body {
@@ -97,36 +97,36 @@
 
   <div id="startPage">
 
-    <h1>Race</h1>
+    <h1>Solssystemets planeter</h1>
 
     <p class="intro">
-      Which post are you at?
+      Hvilken planet er du ved?
     </p>
 
     <div class="post-buttons">
 
       <button class="post-button" onclick="openPost(1)">
-        Post 1
+        Merkur
       </button>
 
       <button class="post-button" onclick="openPost(2)">
-        Post 2
+        Venus
       </button>
 
       <button class="post-button" onclick="openPost(3)">
-        Post 3
+        Mars
       </button>
 
       <button class="post-button" onclick="openPost(4)">
-        Post 4
+        Jupiter
       </button>
 
       <button class="post-button" onclick="openPost(5)">
-        Post 5
+        Saturn
       </button>
 
       <button class="post-button" onclick="openPost(6)">
-        Post 6
+        Uranus & Neptun
       </button>
 
     </div>
@@ -140,12 +140,12 @@
 
     <select id="postSelect" onchange="changePost()">
 
-      <option value="1">Post 1</option>
-      <option value="2">Post 2</option>
-      <option value="3">Post 3</option>
-      <option value="4">Post 4</option>
-      <option value="5">Post 5</option>
-      <option value="6">Post 6</option>
+      <option value="1">Merkur</option>
+      <option value="2">Venus</option>
+      <option value="3">Mars</option>
+      <option value="4">Jupiter</option>
+      <option value="5">Saturn</option>
+      <option value="6">Uranus & Neptun</option>
 
     </select>
 
@@ -158,7 +158,7 @@
       class="back-button"
       onclick="goBack()">
 
-      ← Back to all posts
+      ← Tilbage til oversigt over hele solsystemet
 
     </button>
 
@@ -172,32 +172,32 @@
   const posts = {
 
     1: `
-      <h2>Post 1</h2>
+      <h2>Merkur</h2>
       <p>Information for Post 1 will go here.</p>
     `,
 
     2: `
-      <h2>Post 2</h2>
+      <h2>Venus</h2>
       <p>Information for Post 2 will go here.</p>
     `,
 
     3: `
-      <h2>Post 3</h2>
+      <h2>Mars</h2>
       <p>Information for Post 3 will go here.</p>
     `,
 
     4: `
-      <h2>Post 4</h2>
+      <h2>Jupiter</h2>
       <p>Information for Post 4 will go here.</p>
     `,
 
     5: `
-      <h2>Post 5</h2>
+      <h2>Saturn</h2>
       <p>Information for Post 5 will go here.</p>
     `,
 
     6: `
-      <h2>Post 6</h2>
+      <h2>Uranus & Neptun</h2>
       <p>Information for Post 6 will go here.</p>
     `
 
